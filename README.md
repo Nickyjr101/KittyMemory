@@ -1,6 +1,6 @@
 # KittyMemory
 
-Dedicated library for runtime code patching & some memory utilities for both Android and iOS.
+Dedicated library for runtime code patching, memory scanning and some more memory utilities for both Android and iOS.
 
 KittyMemory now depends on [Keystone Assembler](https://github.com/keystone-engine/keystone) for MemoryPatch::createWithAsm.
 
