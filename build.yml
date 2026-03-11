@@ -1,0 +1,30 @@
+name: Build KittyMemory
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install tools
+      run: |
+        sudo apt update
+        sudo apt install -y cmake clang build-essential
+
+    - name: Build
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        make
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: kittymemory
+        path: build/
